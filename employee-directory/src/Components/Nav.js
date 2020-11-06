@@ -6,7 +6,7 @@ import SearchBox from "./SearchBox";
 function Nav() {
   return (
     <nav
-      className="navbar navbar-expand navbar-light bg-light"
+      className="navbar navbar-expand navbar-dark bg-dark"
       style={{ display: "inline-block", width: "100%" }}
     >
       <div>

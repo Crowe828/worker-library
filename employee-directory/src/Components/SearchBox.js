@@ -23,7 +23,7 @@ function SearchBox(props) {
         <button
           type="submit"
           onClick={props.handleFormSubmit}
-          className="btn btn-primary"
+          className="btn btn-outline-light"
           style={{ marginLeft: "10px" }}
         >
           Search
