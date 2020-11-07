@@ -1,4 +1,5 @@
 import React from "react";
+import Moment from "moment";
 
 function DataBody(props) {
   return (
@@ -15,7 +16,7 @@ function DataBody(props) {
           <td>{results.name.first + " " + results.name.last}</td>
           <td>{results.phone}</td>
           <td>{results.email}</td>
-          <td>{results.dob.date}</td>
+          <td>{Moment(results.dob.date).format("MM/DD/YYYY")}</td>
         </tr>
       ))}
     </tbody>
