@@ -1,28 +1,21 @@
 import React from "react";
 
-function DataBody(data) {
+function DataBody(props) {
   return (
     <tbody>
-      {data.results.map((result) => (
-        <tr>
-          <th scope="row" key={result.id.value}>
+      {props.result.map((results) => (
+        <tr key={results.id.value}>
+          <th scope="row">
             <img
-              alt={
-                result.data.results.name.first +
-                " " +
-                result.data.results.name.last
-              }
-              src={result.data.results.picture.thumbnail}
+              className="img-fluid rounded"
+              alt={results.name.first + " " + results.name.last}
+              src={results.picture.medium}
             />
           </th>
-          <td>
-            {result.data.results.name.first +
-              " " +
-              result.data.results.name.last}
-          </td>
-          <td>{result.data.results.phone}</td>
-          <td>{result.data.results.email}</td>
-          <td>{result.data.results.dob.date}</td>
+          <td>{results.name.first + " " + results.name.last}</td>
+          <td>{results.phone}</td>
+          <td>{results.email}</td>
+          <td>{results.dob.date}</td>
         </tr>
       ))}
     </tbody>
