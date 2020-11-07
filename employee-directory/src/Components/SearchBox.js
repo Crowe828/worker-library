@@ -5,21 +5,15 @@ function SearchBox(props) {
     <form className="search form-inline" style={{ display: "inline-flex" }}>
       <div className="form-group">
         <input
-          value={props.search}
           onChange={props.handleInputChange}
-          name="employee"
-          list="employees"
+          value={props.search}
+          name="search"
           type="text"
           className="form-control"
           placeholder="Search for an employee"
-          id="employee"
+          id="search"
           style={{ width: "500px" }}
         />
-        {/* <datalist id="employees">
-          {props.employees.map((employee) => (
-            <option value={employee} key={employee} />
-          ))}
-        </datalist> */}
         <button
           type="submit"
           onClick={props.handleFormSubmit}

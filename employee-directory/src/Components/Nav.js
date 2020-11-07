@@ -1,8 +1,6 @@
 import React from "react";
 import SearchBox from "./SearchBox";
-// import "../Styles/Nav.css";
 
-// { handleSearchChange }
 function Nav() {
   return (
     <nav
@@ -11,7 +9,6 @@ function Nav() {
     >
       <div>
         <SearchBox />
-        {/* <SearchBox handleSearchChange={handleSearchChange} />; */}
       </div>
     </nav>
   );
