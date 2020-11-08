@@ -1,10 +1,12 @@
 import React, { Component } from "react";
 import DataBody from "./DataBody";
+import SearchBox from "./SearchBox";
 import API from "../Utils/API";
 
 class DataTable extends Component {
   state = {
     result: [],
+    alphabetical: "az",
   };
 
   componentDidMount() {
@@ -18,8 +20,22 @@ class DataTable extends Component {
   };
 
   render() {
+    let sortedUsers;
+
+    if (this.state.alphabetical === "az") {
+      console.log("sort");
+      sortedUsers = this.state.result.sort((a, b) =>
+        a.name.last > b.name.last ? 1 : -1
+      );
+    } else {
+      sortedUsers = this.state.result.sort((a, b) =>
+        a.name.last < b.name.last ? 1 : -1
+      );
+    }
+
     return (
       <table className="table table-hover table-dark">
+        <SearchBox />
         <thead>
           <tr>
             <th scope="col">Image</th>

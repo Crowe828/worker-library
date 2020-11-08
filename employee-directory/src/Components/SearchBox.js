@@ -6,7 +6,7 @@ function SearchBox(props) {
       <div className="form-group">
         <input
           onChange={props.handleInputChange}
-          value={props.search}
+          value={props.result}
           name="search"
           type="text"
           className="form-control"
@@ -15,7 +15,6 @@ function SearchBox(props) {
           style={{ width: "500px" }}
         />
         <button
-          type="submit"
           onClick={props.handleFormSubmit}
           className="btn btn-outline-light"
           style={{ marginLeft: "10px" }}
