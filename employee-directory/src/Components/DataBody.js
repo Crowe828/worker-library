@@ -2,7 +2,6 @@ import React from "react";
 import Moment from "moment";
 
 function DataBody(props) {
-
   return (
     <tbody>
       {props.result.map((results) => (
