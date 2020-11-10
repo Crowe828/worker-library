@@ -19,7 +19,7 @@ class DataTable extends Component {
       return values.indexOf(search.toLowerCase()) !== -1;
     });
 
-    this.setState({ result: foundEmployees });
+    this.setState({ resultSort: foundEmployees });
   };
 
   componentDidMount() {
@@ -30,6 +30,18 @@ class DataTable extends Component {
     API.getUsers()
       .then((res) => this.setState({ result: res.data.results }))
       .catch((err) => console.log(err));
+  };
+
+  resultsOrSearched = () => {
+    if (this.state.search !== "") {
+      return (
+        <DataBody sortByName={this.sortByName} result={this.state.resultSort} />
+      );
+    } else {
+      return (
+        <DataBody sortByName={this.sortByName} result={this.state.result} />
+      );
+    }
   };
 
   render() {
@@ -59,7 +71,7 @@ class DataTable extends Component {
               <th scope="col">DOB</th>
             </tr>
           </thead>
-          <DataBody result={this.state.result} />
+          {this.resultsOrSearched()};
         </table>
       </div>
     );
