@@ -12,13 +12,6 @@ function SearchBox(props) {
           placeholder="Search for an employee"
           style={{ width: "500px" }}
         />
-        {/* <button
-          onClick={props.handleFormSubmit}
-          className="btn btn-outline-light"
-          style={{ marginLeft: "10px" }}
-        >
-          Search
-        </button> */}
       </div>
     </form>
   );
